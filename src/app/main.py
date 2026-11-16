@@ -11,6 +11,7 @@ Run from the root of the repository:
 import re
 import subprocess
 import sys
+import shutil
 from pathlib import Path
 
 import chainlit as cl
@@ -41,7 +42,8 @@ langfuse = Langfuse(blocked_instrumentation_scopes=["chainlit"])
 
 def get_access_token() -> str:
     """Get an access token for the gcloud user account (use a service account in production)."""
-    return subprocess.check_output(["gcloud", "auth", "print-access-token"], text=True).strip()
+    gcloud = shutil.which("gcloud") or "gcloud"  # sous Windows, trouve gcloud.cmd
+    return subprocess.check_output([gcloud, "auth", "print-access-token"], text=True).strip()
 
 
 def build_prompt(question: str, level: str, sector: str) -> str:
