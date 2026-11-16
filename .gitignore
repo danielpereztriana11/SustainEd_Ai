@@ -1,0 +1,16 @@
+.env
+.venv
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Fichiers générés
+data/
+sustained_pipeline.yaml
+logs/
+phi3-mini-sustained-adapter/
+.ipynb_checkpoints/
+.DS_Store
+
+# Chainlit (fichiers envoyés par les utilisateurs)
+.files/

@@ -1,0 +1,6 @@
+{
+  "instances": [
+    {"prompt": "<|user|>\nI run a small coffee shop. What are Scope 3 emissions? Explain for a beginner.<|end|>\n<|assistant|>\n"}
+  ],
+  "parameters": {"max_new_tokens": 256, "do_sample": false}
+}

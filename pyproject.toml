@@ -1,0 +1,48 @@
+[project]
+name = "sustained-ai"
+version = "0.1.0"
+description = "SustainEd AI: a sustainability tutor fine-tuned, deployed and monitored on Vertex AI"
+readme = "README.md"
+requires-python = ">=3.11.6"
+dependencies = [
+    "accelerate>=1.15.0",
+    "chainlit>=2.12.0",
+    "datasets<5",
+    "gcsfs<2026.3",
+    "google-cloud-aiplatform>=2.4.0",
+    "google-cloud-bigquery>=3.46.1",
+    "google-cloud-storage>=3.16.0",
+    "google-genai>=2.28.0",
+    "kfp>=2.16.1",
+    "langchain-community<0.4",
+    "langfuse>=4.18,<5",
+    "pandas>=3.1.0",
+    "peft==0.13.2",
+    "python-dotenv>=1.2.4",
+    "ragas>=0.4.3",
+    "requests>=2.33.0",
+    "rouge-score>=0.1.2",
+    "sacrebleu>=2.6.0",
+    "tensorboard>=2.21.0",
+    "torch>=2.14.1",
+    "transformers==4.46.*",
+    "trl==0.12.2",
+]
+
+[project.scripts]
+sustained-ai = "sustained_ai:main"
+
+[build-system]
+requires = ["uv_build>=0.12.23,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "pytest>=9.2.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
