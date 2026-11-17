@@ -35,6 +35,7 @@ def sustained_pipeline(raw_data_uri: str):
         fine_tuning_component(
             train_data=data_task.outputs["train_output_path"],
             validation_data=data_task.outputs["validation_output_path"],
+            num_train_epochs=2,
         )
     )
 
